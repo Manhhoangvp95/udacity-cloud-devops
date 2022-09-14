@@ -24,4 +24,4 @@ Script help create stack in cloudformation
 Script help start our webservice.
 
 ## To start webapp. Please run script: deploy.sh
-My demo WebappURL: http://Creat-WebAp-BMHX1RHZ62O7-1410478662.us-east-1.elb.amazonaws.com
+My demo WebappURL: http://Creat-WebAp-YQ7WLPTSBCXN-1993126189.us-east-1.elb.amazonaws.com
