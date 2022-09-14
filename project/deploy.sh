@@ -21,5 +21,7 @@ aws cloudformation wait stack-create-complete --stack-name CreateVPC --region $r
 #create server
 ./create.sh CreateSV servers.yml server-parameters.json $region
 # get access URL
+# Wait for stack CreateSV complete
+aws cloudformation wait stack-create-complete --stack-name CreateSV --region $region
 echo "Please click on below url to access the webpage"
 aws cloudformation describe-stacks --stack-name CreateSV --region $region --query "Stacks[0].Outputs[?OutputKey=='WALB'].OutputValue" --output text
