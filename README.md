@@ -1,5 +1,5 @@
 ### Deploy a high-availability web app using CloudFormation
-![Infrastructure Diagram](AWSWebApp.png)
+![Infrastructure Diagram](project/AWSWebApp.png)
 This folder provides the code for the "ND9991 - C2- Infrastructure as Code - Deploy a high-availability web app using CloudFormation" project. This folder contains the following files:
 
 #### network.yml
