@@ -8,6 +8,9 @@ Parameters:
   LatestAmiId:
     Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
     Default: '/aws/service/canonical/ubuntu/server/focal/stable/current/amd64/hvm/ebs-gp2/ami-id'
+  BucketName:
+    Type: String
+    Description: Bucket name
   # Parameters are entirely optional.
   # but using them will make your cloudformation templates more reusable
   # use them for things that may change over time, such as instance type,
@@ -88,7 +91,7 @@ Resources:
           systemctl start apache2.service       
           cd /var/www/html
           sudo apt install awscli -y
-          aws s3 cp s3://$bucket/index.html .
+          aws s3 cp s3://${BucketName}/index.html .
 #          echo "Udacity Demo Web Server Up and Running!" > index.html
       ImageId: ami-0ee23bfc74a881de5
       IamInstanceProfile: !Ref ProfileWithRolesForOurApp
