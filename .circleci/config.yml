@@ -9,8 +9,11 @@ jobs:
   print_test:
     docker: 
       - image: circleci/node:13.8.0
+    environment:
+      my-name: Hoang-Manh
     steps:
-      - run: My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>.
+      - run: echo My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>.
+      - run: echo $my-name
 
 workflows:
   # Name the workflow "welcome"
