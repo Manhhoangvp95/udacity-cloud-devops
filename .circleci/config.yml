@@ -19,7 +19,7 @@ jobs:
     docker: 
       - image: circleci/node:13.8.0
     steps:
-      - run: echo My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>. > /tmp/output.txt
+      - run: echo My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>. > output.txt
       - persist_to_workspace:
           root: ~/
           paths:
