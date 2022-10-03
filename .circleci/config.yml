@@ -39,6 +39,7 @@ workflows:
     # Run the welcome/run job in its own container
     jobs:
       - print_test
-      
+      - save_hello_world_output
+      - print_output_file
 
 
