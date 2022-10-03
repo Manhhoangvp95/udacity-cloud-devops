@@ -30,7 +30,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ./
-      - run: echo /tmp/dir/output.txt
+      - run: cat output.txt
       
 
 workflows:
