@@ -19,7 +19,7 @@ jobs:
       - print_pipeline_id
       - run:
           name: Upload Failed Tests
-          command: curl --data fail_tests.log http://example.com/error_logs
+          command: echo "hello error roi"
           when: on_fail
 
 workflows:
