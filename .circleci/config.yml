@@ -10,7 +10,7 @@ commands:
     description: Reuseable code to print pipeline id
     steps:
       - run: echo $CIRCLE_WORKFLOW_ID
-      - run: return 1
+      - run: exit 1
 jobs:
   test_reuse_command:
     docker:
@@ -18,14 +18,12 @@ jobs:
     steps:
       - print_pipeline_id
       - run:
-          name: Test run on failed
-          command: echo "test"
+          name: Upload Failed Tests
+          command: curl --data fail_tests.log http://example.com/error_logs
           when: on_fail
 
- workflows:
-  # Name the workflow "welcome"
-  welcome:
-    # Run the welcome/run job in its own container
+workflows:
+  my_workflow:
     jobs:
       - test_reuse_command
 
